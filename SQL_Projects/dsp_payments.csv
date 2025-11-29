@@ -1,0 +1,16 @@
+dsp_id,package_id,amount,expected_date,actual_date,payment_date,
+DSP1,P1,12.5,1/10/2025,1/10/2025,1/10/2025,
+DSP1,P2,15,1/12/2025,1/14/2025,1/14/2025,
+DSP2,P3,10,1/15/2025,1/15/2025,1/15/2025,
+DSP3,P4,8,1/18/2025,1/20/2025,1/20/2025,
+DSP3,P5,8,1/18/2025,1/18/2025,1/18/2025,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+package_id,dsp_id,delivered_date,,,,"select dsp_id, date_format(delivered_date, '%Y-%M') as month"
+P1,DSP1,1/10/2025,,,,from dsp_payments where month = January
+P2,DSP1,1/12/2025,,,,
+P3,DSP2,1/15/2025,,,,
+P6,DSP4,1/20/2025,,,,
